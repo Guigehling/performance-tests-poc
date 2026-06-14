@@ -1,0 +1,9 @@
+services:
+  k6:
+    image: grafana/k6:latest
+    volumes:
+      - ./dist:/scenarios
+      - ./reports:/reports
+    command:
+      - run
+      - /scenarios/load-test.js

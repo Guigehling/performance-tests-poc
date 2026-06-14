@@ -1,0 +1,12 @@
+{
+    "name": "k6-typescript-poc",
+    "private": true,
+    "scripts": {
+        "build": "node build.js",
+        "test": "npm run build && docker compose run --rm k6"
+    },
+    "devDependencies": {
+        "@types/k6": "^1.0.1",
+        "esbuild": "^0.28.1"
+    }
+}
