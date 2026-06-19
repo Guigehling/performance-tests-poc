@@ -1,0 +1,10 @@
+# JMeter results 
+results/
+
+# IDE
+.idea/ 
+.vscode/
+
+# OS 
+.DS_Store 
+Thumbs.db

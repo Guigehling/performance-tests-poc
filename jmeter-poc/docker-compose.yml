@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  jmeter:
+    image: justb4/jmeter:5.5
+    volumes:
+      - ./tests:/tests
+      - ./results:/results
+    # Comandos executados no CLI do JMeter:
+    # -n: modo não-GUI (headless)
+    # -t: caminho do script .jmx de entrada
+    # -l: caminho do arquivo de log (.jtl) com os resultados brutos
+    # -e: gera o relatório em HTML após o teste
+    # -o: pasta de saída do relatório HTML
+    entrypoint:
+      - jmeter
+      - -n
+      - -t
+      - /tests/load-test.jmx
+      - -l
+      - /results/output.jtl
+      - -e
+      - -o
+      - /results/dashboard
